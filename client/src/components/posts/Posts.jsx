@@ -9,8 +9,6 @@ const Posts = () => {
     queryFn: () => makeRequest.get("/posts").then((res) => res.data),
   });
 
-  console.log(data);
-
   return (
     <div className="posts">
       {error
