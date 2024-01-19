@@ -6,7 +6,10 @@ import { makeRequest } from "../../axios.js";
 const Posts = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["posts"],
-    queryFn: () => makeRequest.get("/posts").then((res) => res.data),
+    queryFn: () =>
+      makeRequest.get("/posts").then((res) => {
+        return res.data;
+      }),
   });
 
   return (
